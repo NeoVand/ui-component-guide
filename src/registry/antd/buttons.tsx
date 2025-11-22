@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Flex, Tooltip } from 'antd';
-import { SearchOutlined, PoweroffOutlined, DownloadOutlined } from '@ant-design/icons';
+import { SearchOutlined, PoweroffOutlined } from '@ant-design/icons';
 
 export const BasicButtons = () => (
     <Flex gap="small" wrap="wrap">

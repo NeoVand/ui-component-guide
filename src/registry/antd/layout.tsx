@@ -6,9 +6,9 @@ const { Header, Footer, Sider, Content } = Layout;
 export const BasicDivider = () => (
     <div style={{ width: '100%' }}>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <Divider orientation="left">Left Text</Divider>
+        <Divider titlePlacement="left" plain>Left Text</Divider>
         <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <Divider orientation="right">Right Text</Divider>
+        <Divider titlePlacement="right" plain>Right Text</Divider>
         <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <Divider dashed />
         <p>Dashed divider above.</p>

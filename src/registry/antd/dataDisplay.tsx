@@ -4,7 +4,7 @@ import {
     Image, List, Popover, QRCode, Segmented, Statistic, Table, Tag, Timeline,
     Tooltip, Tour, Tree, Button, Flex
 } from 'antd';
-import { UserOutlined, EllipsisOutlined, MoreOutlined } from '@ant-design/icons';
+import { UserOutlined } from '@ant-design/icons';
 
 export const BasicAvatar = () => (
     <Avatar.Group>

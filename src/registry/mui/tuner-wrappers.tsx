@@ -19,26 +19,14 @@ import MailIcon from '@mui/icons-material/Mail';
 
 // Dialog Wrapper
 export const DialogWrapper = (props: any) => {
-    // We need to manage the open state internally for the preview if we want it to be interactive,
-    // but the tuner controls 'open'. If tuner passes 'open', we use it.
-    // However, 'open' being true in the preview might block the UI.
-    // For the tuner preview, we might want to force it open but contained?
-    // Dialogs are portals by default. We can use disablePortal to keep it in the preview box if possible,
-    // but MUI Dialogs are tricky in small previews.
-    // Let's try disablePortal and hideBackdrop for better preview experience if supported,
-    // or just render it.
-    
-    // Note: style={{ position: 'absolute' }} helps contain it in the relative parent of the preview
     return (
         <Box sx={{ height: 300, position: 'relative', transform: 'translateZ(0)' }}>
             <Dialog
                 {...props}
                 disablePortal
                 style={{ position: 'absolute' }}
-                container={null} // Render inline
-                open={true} // Always open in preview to see changes, unless user explicitly toggles? 
-                // Actually better to let user toggle, but default to true.
-                // If props.open is passed, use it.
+                container={null}
+                open={true}
             >
                 <DialogTitle>Use Google's location service?</DialogTitle>
                 <DialogContent>
@@ -69,9 +57,7 @@ export const TooltipWrapper = (props: any) => {
 
 // Stack Wrapper
 export const StackWrapper = (props: any) => {
-    // Ensure spacing is a number
     const spacing = props.spacing ? Number(props.spacing) : 2;
-    
     return (
         <Stack {...props} spacing={spacing}>
             <Box sx={{ p: 2, border: '1px solid', borderColor: 'divider', borderRadius: 1 }}>Item 1</Box>
@@ -83,21 +69,23 @@ export const StackWrapper = (props: any) => {
 
 // Grid Wrapper
 export const GridWrapper = (props: any) => {
-    // Ensure spacing is a number
     const spacing = props.spacing ? Number(props.spacing) : 2;
-
     return (
         <Box sx={{ flexGrow: 1, width: '100%' }}>
-            <Grid container {...props} spacing={spacing}>
+            <Grid container spacing={spacing} {...props}>
+                {/* @ts-ignore: Grid item prop issue with v5/v6 types */}
                 <Grid item xs={8}>
                     <Box sx={{ p: 2, border: '1px solid', borderColor: 'divider', borderRadius: 1, bgcolor: 'background.paper' }}>xs=8</Box>
                 </Grid>
+                {/* @ts-ignore: Grid item prop issue with v5/v6 types */}
                 <Grid item xs={4}>
                     <Box sx={{ p: 2, border: '1px solid', borderColor: 'divider', borderRadius: 1, bgcolor: 'background.paper' }}>xs=4</Box>
                 </Grid>
+                {/* @ts-ignore: Grid item prop issue with v5/v6 types */}
                 <Grid item xs={4}>
                     <Box sx={{ p: 2, border: '1px solid', borderColor: 'divider', borderRadius: 1, bgcolor: 'background.paper' }}>xs=4</Box>
                 </Grid>
+                {/* @ts-ignore: Grid item prop issue with v5/v6 types */}
                 <Grid item xs={8}>
                     <Box sx={{ p: 2, border: '1px solid', borderColor: 'divider', borderRadius: 1, bgcolor: 'background.paper' }}>xs=8</Box>
                 </Grid>
@@ -108,9 +96,6 @@ export const GridWrapper = (props: any) => {
 
 // Box Wrapper
 export const BoxWrapper = (props: any) => {
-    // Convert string sx to object if needed, but tuner usually passes strings for simple props.
-    // Box sx is complex. For now, let's just use props.
-    // If we want to demo Box, we should probably set some visible styles.
     return (
         <Box
             {...props}
@@ -124,7 +109,7 @@ export const BoxWrapper = (props: any) => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                ...props.sx // allow override
+                ...props.sx
             }}
         >
             Box
@@ -159,7 +144,7 @@ export const BottomNavigationWrapper = (props: any) => {
             <BottomNavigation
                 showLabels
                 value={value}
-                onChange={(event, newValue) => {
+                onChange={(_event, newValue) => {
                     setValue(newValue);
                 }}
                 {...props}
@@ -208,7 +193,7 @@ export const SpeedDialWrapper = (props: any) => {
 // Tabs Wrapper
 export const TabsWrapper = (props: any) => {
     const [value, setValue] = React.useState(0);
-    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
     };
     return (
@@ -224,10 +209,6 @@ export const TabsWrapper = (props: any) => {
 
 // Drawer Wrapper
 export const DrawerWrapper = (props: any) => {
-    // We need to force it to be contained or visible
-    // 'temporary' drawers usually cover the screen.
-    // For tuner, maybe 'persistent' inside a container is better?
-    // Or just disablePortal + absolute positioning.
     return (
         <Box sx={{ height: 400, position: 'relative', transform: 'translateZ(0)', overflow: 'hidden', border: '1px solid', borderColor: 'divider' }}>
             <Drawer
@@ -236,8 +217,8 @@ export const DrawerWrapper = (props: any) => {
                 style={{ position: 'absolute' }}
                 PaperProps={{ style: { position: 'absolute' } }}
                 ModalProps={{ container: null, style: { position: 'absolute' } }}
-                open={true} // Force open for preview
-                variant="persistent" // Force persistent for preview layout usually
+                open={true}
+                variant="persistent"
             >
                 <Box sx={{ width: 250, p: 2 }}>
                     <Typography variant="h6" gutterBottom>Drawer Content</Typography>
@@ -315,4 +296,3 @@ export const MasonryWrapper = (props: any) => {
         </Box>
     );
 };
-

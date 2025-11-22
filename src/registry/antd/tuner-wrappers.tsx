@@ -1,4 +1,3 @@
-import React from 'react';
 import { Table, Badge, Avatar, Tooltip, Button } from 'antd';
 
 // Table Wrapper

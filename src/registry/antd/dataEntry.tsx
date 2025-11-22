@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
     AutoComplete, Cascader, Checkbox, ColorPicker, DatePicker, Form, Input,
     InputNumber, Mentions, Radio, Rate, Select, Slider, Switch, TimePicker,
@@ -134,7 +134,7 @@ export const BasicTransfer = () => {
 
     const [targetKeys, setTargetKeys] = useState<string[]>([]);
     const handleChange: TransferProps['onChange'] = (newTargetKeys) => {
-        setTargetKeys(newTargetKeys);
+        setTargetKeys(newTargetKeys as string[]);
     };
 
     return (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Settings2, RotateCcw, Code, Eye, ChevronDown } from 'lucide-react';
+import { RotateCcw, Code, Eye, ChevronDown } from 'lucide-react';
 import type { ComponentItem, PropDefinition } from '../../types/registry';
 import { Modal } from '../UI/Modal';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';

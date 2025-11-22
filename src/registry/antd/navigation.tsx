@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Anchor, Breadcrumb, Dropdown, Menu, Pagination, Steps, Tabs, Button, message, type MenuProps } from 'antd';
-import { DownOutlined, UserOutlined, SolutionOutlined, LoadingOutlined, SmileOutlined } from '@ant-design/icons';
+import { DownOutlined, UserOutlined, SolutionOutlined } from '@ant-design/icons';
 
 export const BasicAnchor = () => (
     <div style={{ padding: 20, height: 200, position: 'relative', overflow: 'hidden' }}>

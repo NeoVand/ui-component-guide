@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Affix, App, Button, ConfigProvider, Space, message, notification, Modal } from 'antd';
+import { useState } from 'react';
+import { Affix, App, Button, ConfigProvider, Space } from 'antd';
 
 export const BasicAffix = () => {
     const [top, setTop] = useState<number>(10);
@@ -37,7 +37,8 @@ const AppChild = () => {
         notification.info({
             message: 'Notification Title',
             description: 'Hello, Ant Design!!',
-        });
+            type: 'info',
+        } as any);
     };
     return (
         <Space wrap>

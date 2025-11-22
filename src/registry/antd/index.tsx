@@ -1,31 +1,26 @@
 import type { LibraryDefinition } from '../../types/registry';
 import {
     MousePointerClick, Type, Layout, Navigation, Keyboard,
-    Table, MessageSquare, Box, ToggleRight
-} from 'lucide-react';
+    Table, MessageSquare, Box} from 'lucide-react';
 import { BasicButtons, IconButtons, LoadingButtons, DangerButtons } from './buttons';
 import { BasicFloatButtons, BasicTypography } from './general';
-import { BasicDivider, BasicFlex, BasicGrid, BasicLayout, BasicSpace, BasicSplitter } from './layout';
-import { BasicAnchor, BasicBreadcrumb, BasicDropdown, BasicMenu, BasicPagination, BasicSteps, BasicTabs } from './navigation';
+import { BasicDivider, BasicFlex, BasicGrid, BasicLayout, BasicSpace } from './layout';
+import { BasicBreadcrumb, BasicDropdown, BasicMenu, BasicPagination, BasicSteps, BasicTabs } from './navigation';
 import {
-    BasicAutoComplete, BasicCascader, BasicCheckbox, BasicColorPicker, BasicDatePicker,
-    BasicForm, BasicInput, BasicInputNumber, BasicMentions, BasicRadio, BasicRate,
-    BasicSelect, BasicSlider, BasicSwitch, BasicTimePicker, BasicTransfer, BasicTreeSelect,
-    BasicUpload
-} from './dataEntry';
+    BasicCheckbox, BasicDatePicker,
+    BasicInput, BasicRadio, 
+    BasicSelect, BasicSlider, BasicSwitch
+    } from './dataEntry';
 import {
-    BasicAvatar, BasicBadge, BasicCalendar, BasicCard, BasicCarousel, BasicCollapse,
-    BasicDescriptions, BasicEmpty, BasicImage, BasicList, BasicPopover, BasicQRCode,
-    BasicSegmented, BasicStatistic, BasicTable, BasicTag, BasicTimeline, BasicTooltip,
-    BasicTour, BasicTree
-} from './dataDisplay';
+    BasicAvatar, BasicBadge, BasicCard, 
+    
+    BasicTable, BasicTag, BasicTooltip} from './dataDisplay';
 import {
-    BasicAlert, BasicDrawer, BasicMessage, BasicModal, BasicNotification, BasicPopconfirm,
-    BasicProgress, BasicResult, BasicSkeleton, BasicSpin, BasicWatermark
-} from './feedback';
-import { BasicAffix, BasicApp, BasicConfigProvider } from './other';
+    BasicAlert, BasicModal, 
+    BasicProgress, BasicSkeleton, BasicSpin} from './feedback';
+import { BasicApp, BasicConfigProvider } from './other';
 import { AntdThemeAdapter } from './ThemeAdapter';
-import { Button, FloatButton, Typography, Divider, Flex, Row, Col, Layout as AntdLayout, Space, Splitter, Anchor, Breadcrumb, Dropdown, Menu, Pagination, Steps, Tabs, AutoComplete, Cascader, Checkbox, ColorPicker, DatePicker, Form, Input, InputNumber, Mentions, Radio, Rate, Select, Slider, Switch, TimePicker, Transfer, TreeSelect, Upload, Avatar, Badge, Calendar, Card, Carousel, Collapse, Descriptions, Empty, Image, List, Popover, QRCode, Segmented, Statistic, Table as AntdTable, Tag, Timeline, Tooltip, Tour, Tree, Alert, Drawer, Modal, Popconfirm, Progress, Result, Skeleton, Spin, Watermark, Affix, App, ConfigProvider } from 'antd';
+import { Button, FloatButton, Divider, Flex, Space, Pagination, Steps, Tabs, Checkbox, DatePicker, Input, Radio, Select, Slider, Switch, Avatar, Card, Tag, Alert, Progress, Skeleton, Spin } from 'antd';
 import { TableWrapper, BadgeWrapper, TooltipWrapper } from './tuner-wrappers';
 
 export const antdRegistry: LibraryDefinition = {
@@ -606,7 +601,7 @@ export const BasicSelect = () => (
                         component: Select,
                         imports: ["import { Select } from 'antd';"],
                         props: [
-                            { name: 'mode', type: 'select', options: [undefined, 'multiple', 'tags'], defaultValue: undefined, description: 'Mode' },
+                            { name: 'mode', type: 'select', options: ['', 'multiple', 'tags'], defaultValue: '', description: 'Mode' },
                             { name: 'size', type: 'select', options: ['large', 'middle', 'small'], defaultValue: 'middle', description: 'Size' },
                             { name: 'disabled', type: 'boolean', defaultValue: false, description: 'Disabled' },
                             { name: 'status', type: 'select', options: ['', 'error', 'warning'], defaultValue: '', description: 'Status' },

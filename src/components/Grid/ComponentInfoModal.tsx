@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Copy, Check } from 'lucide-react';
+import { Copy, Check } from 'lucide-react';
 import type { ComponentItem } from '../../types/registry';
 import { Modal } from '../UI/Modal';
 

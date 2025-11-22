@@ -1,6 +1,5 @@
-import React from 'react';
 import { FloatButton, Typography, Flex, Space } from 'antd';
-import { QuestionCircleOutlined, SyncOutlined } from '@ant-design/icons';
+import { QuestionCircleOutlined } from '@ant-design/icons';
 
 const { Title, Paragraph, Text, Link } = Typography;
 
