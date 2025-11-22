@@ -22,7 +22,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ registry, children }) =>
                                 <span className="text-white font-bold text-sm">UI</span>
                             </div>
                             <span className="font-bold text-xl tracking-tight text-[var(--color-text)]">
-                                Guide
+                                Atlas
                             </span>
                         </div>
                     </div>
