@@ -33,7 +33,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ registry, children }) =>
 
                 {/* Main Content Area */}
                 <div className="flex-1 flex flex-col min-w-0">
-                    <Header />
+                    <Header registry={registry} />
                     <main className="flex-1 overflow-y-auto scroll-smooth">
                         {children}
                     </main>
