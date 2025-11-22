@@ -16,7 +16,7 @@ interface AppState {
 export const useAppStore = create<AppState>((set) => ({
     currentLibraryId: null,
     currentFamilyName: null,
-    isDarkMode: false, // Default to light mode
+    isDarkMode: true, // Default to dark mode
     primaryColor: 'blue', // Default primary color
 
     setLibrary: (libraryId) => set({ currentLibraryId: libraryId, currentFamilyName: null }),
